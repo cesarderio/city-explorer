@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import React from 'react';
 import axios from 'axios';
 
@@ -32,10 +30,8 @@ class App extends React.Component {
 
   // *** CITY DATA DEMO HANDLERS ***
 
-  handleInput = async (e) => {
+  handleInput = (e) => {
     e.preventDefault();
-    let cityData = await axios.get('https://us1.locationiq.com/v1/search?key=YOUR_ACCESS_TOKEN&q=SEARCH_STRING&format=json');
-    
     this.setState({
       city: e.target.value
     })
