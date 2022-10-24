@@ -14,20 +14,6 @@ class App extends React.Component {
     }
   }
 
-  // *** GET POKEMON DATA ****
-  handleGetPokemon = async (e) => {
-    e.preventDefault();
-    let pokemonData = await axios.get('https://pokeapi.co/api/v2/pokemon');
-    let pokemonAbilites = await axios.get('https://pokeapi.co/api/v2/ability/1/')
-
-    console.log(pokemonAbilites.data);
-    // console.log(pokemonData.data);
-    this.setState({
-      pokemonData: pokemonData.data.results
-    });
-  }
-
-
   // *** CITY DATA DEMO HANDLERS ***
 
   handleInput = (e) => {
@@ -36,7 +22,6 @@ class App extends React.Component {
       city: e.target.value
     })
   }
-
   // async/await - handles our asynchronous code
   // try/catch - handles our promise - resolve a successful promise, or handles our errors with a rejected promise
 
@@ -72,20 +57,10 @@ class App extends React.Component {
   }
 
   render() {
-    let pokemonItems = this.state.pokemonData.map((pokemon, index) => {
-      return <li key={index}>{pokemon.name}</li>
-    })
 
     return (
       <>
         <h1>API Call</h1>
-
-        <form>
-          <button onClick={this.handleGetPokemon}>Gotta catch em all!</button>
-        </form>
-        <ul>
-          {pokemonItems}
-        </ul>
 
 
         <form onSubmit={this.getCityData}>
@@ -95,7 +70,6 @@ class App extends React.Component {
           </label>
         </form>
 
-        {/* Ternary W ? T : F */}
         {
           this.state.error
           ?
