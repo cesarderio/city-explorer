@@ -1,3 +1,31 @@
+body{
+  background-color: #0dd3fb91;
+  text-align: center;
+}
+
+.form-control{
+  text-align: center;
+margin-left: auto;
+margin-right: auto;
+  width: 300px;
+}
+
+formInput.form-control{
+  padding: 10px;
+}
+
+form-input{
+  padding: 10px;
+}
+
+btn.btn-primary{
+  padding: 10px;
+}
+
+#city-form{
+  padding: 10px;
+}
+
 .App {
   text-align: center;
 }
