@@ -78,7 +78,7 @@ console.log(this.state.city);
             lon={this.state.cityData.lon}
           />
         )}
-        {/* {this.state.error && <Error error={this.state.errorMessage} />} */}
+        {this.state.error && <Error error={this.state.errorMessage} />}
       </Container>
     );
   }
