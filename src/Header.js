@@ -6,9 +6,9 @@ class Header extends Component {
 
   render() {
     return (
-      <Container>
+      // <Container>
         <h1> Explore the City!</h1>
-      </Container>
+      /* </Container> */
     );
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import "bootstrap/dist/css/bootstrap.css";
 import "./App.css"
 import Main from './Main';
 import React from 'react';

@@ -24,17 +24,19 @@ class Main extends Component {
 
   handleInput = (e) => {
     e.preventDefault();
+    console.log('target.data',e.target.value);
     this.setState({
       city: e.target.value
     })
   }
   getCityData = async (e) => {
     e.preventDefault();
-
+console.log(this.state.city);
     try {
       let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`
 
       let cityData = await axios.get(url);
+      console.log('cityData',cityData.data);
 
       this.setState({
         cityData: cityData.data[0],
@@ -57,15 +59,15 @@ class Main extends Component {
   render() {
     return (
       <Container>
-        <Form id="city-form">
+        <Form onSubmit={this.getCityData} id="city-form">
           <Form.Label>Search For A City</Form.Label>
           <Form.Control
             name="city"
             type="text"
             id="formInput"
-            onChange={this.handleChange}
+            onChange={this.handleInput}
           />
-          <Button variant="primary" type="submit" onClick={this.handleSubmit}>
+          <Button variant="primary" type="submit" >
             Explore!
           </Button>
         </Form>
@@ -76,7 +78,7 @@ class Main extends Component {
             lon={this.state.cityData.lon}
           />
         )}
-        {this.state.error && <Error error={this.state.errorMessage} />}
+        {/* {this.state.error && <Error error={this.state.errorMessage} />} */}
       </Container>
     );
   }
