@@ -23,61 +23,127 @@ Be sure to include these drawings in your README.md.
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
-Name of feature: ________________________________
+Name of feature: Set up React app and Github Repo and connect.
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 12:30 PM
 
-Finish time: _____
+Finish time: 1:30 PM
 
-Actual time needed to complete: _____
-
-//------------
-Name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
+Actual time needed to complete: 1 hour
 
 //------------
-Name of feature: ________________________________
 
-Estimate of time needed to complete: _____
+Name of feature: create Json, Gitignore and env files.
 
-Start time: _____
+Estimate of time needed to complete: 30 minutes
 
-Finish time: _____
+Start time: 1:00 PM
 
-Actual time needed to complete: _____
+Finish time: 1:30 PM
 
-//------------
-Name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
+Actual time needed to complete: 30 minutes
 
 //------------
-Name of feature: ________________________________
+Name of feature: Set up React with API Keys from locationIQ
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 1:30 PM
 
-Finish time: _____
+Finish time: 2:00 PM
 
-Actual time needed to complete: _____
+Actual time needed to complete: 30 minutes
 
 //------------
+
+Name of feature: Update API token name and HTTP's
+
+Estimate of time needed to complete: 30 minutes
+
+Start time: 2:00 PM
+
+Finish time: 2:30 PM
+
+Actual time needed to complete: 30 minutes
+
+//------------
+
+Name of feature: Add and deploy to Netlify and add as HTTp referrer.
+
+Estimate of time needed to complete: 30 minutes
+
+Start time: 2:30 PM
+
+Finish time: 3:00 PM
+
+Actual time needed to complete: 30 minutes
+
+//------------
+
+Name of feature: Set up city and latitude and longitude on search
+
+Estimate of time needed to complete: 30 minutes
+
+Start time: 3:30 PM
+
+Finish time: 6:00 PM
+
+Actual time needed to complete: 3 hours
+
+//------------
+
+Name of feature: Build form for user interface
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 4:30 PM
+
+Finish time: 6:00 PM
+
+Actual time needed to complete: 1.5 hours
+
+//------------
+
+//------------
+
+Name of feature: Use lat/lon to create map of city searched by user.
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 5:30 PM
+
+Finish time: 6:30 PM
+
+Actual time needed to complete: 1 hour
+
+//------------
+
+Name of feature: Create and display error messages if something goes wrong
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 6:00 PM
+
+Finish time: 6:30 PM
+
+Actual time needed to complete: 30 minutes
+
+//------------
+
+Name of feature: Work on CSS to style page
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 7:00 PM
+
+Finish time: 8:30 PM
+
+Actual time needed to complete: 1.5 hours
+
+//------------
+
 Name of feature: ________________________________
 
 Estimate of time needed to complete: _____
