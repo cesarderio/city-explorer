@@ -4,7 +4,7 @@ Document the data flow: identify inputs and outputs for each part of the cycle.
 Outline the functions that support this data flow.
 Be sure to include these drawings in your README.md.
 
-[Web Request-response cycle](./Screenshot%202022-10-25%20at%209.10.25%20AM.png)
+[Web Request-response cycle](./Screenshot%202022-10-25%20at%209.17.06%20AM.png)
 
 # Project Name - City-Explorer
 
