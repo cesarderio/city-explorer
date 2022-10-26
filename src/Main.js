@@ -34,7 +34,7 @@ getWeatherData = async (e) => {
   e.preventDefault();
   // console.log(this.state.city);
       try {
-        let url = `{process.env.REACT_APP_SERVER}/weather?city=${this.StaticRange.species}`
+        let url = `{process.env.REACT_APP_SERVER}/weather?city=${this.StaticRange.city}`
   
         let weatherData = await axios.get(url);
         console.log('weatherData',weatherData.data);
