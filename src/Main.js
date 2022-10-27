@@ -7,85 +7,89 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Error from "./Error";
 import CityLocation from "./CityLocation";
-
+import Weather from "./Weather";
+import Movies from "./Movies"
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: '',
+      city: "",
       cityData: [],
       error: false,
-      errorMessage: '',
+      errorMessage: "",
       lat: 0,
       lon: 0,
+      weatherData: [],
+      movies: [],
+      map: null,
     };
   }
 
   handleInput = (e) => {
     e.preventDefault();
-    console.log('target.data',e.target.value);
+    console.log("target.data", e.target.value);
     this.setState({
-      city: e.target.value
-    })
-  }
+      city: e.target.value,
+    });
+  };
 
-getWeatherData = async (e) => {
-  e.preventDefault();
-  // console.log(this.state.city);
-      try {
-        let url = `{process.env.REACT_APP_SERVER}/weather?city=${this.StaticRange.city}`
-  
-        let weatherData = await axios.get(url);
-        console.log('weatherData',weatherData.data);
-  
-        this.setState({
-          cityData: cityData.data[0],
-          error: false,
-          lat: this.state.weatherData.lat,
-          lon: this.state.weatherData.lon,
-        });
-  
-      } catch(error){
-        if(this.state.error){
-         return `${this.state.errorMessage}`
-        }
-        this.setState({
-          error: true,
-          errorMessage: error.message
-        })
-      }
+  getWeatherData = async (location) => {
+    let url = `${process.env.REACT_APP_SERVER}/weather?cityName=${this.state.city}&lat=${location.lat}&lon=${location.lon}`;
+    try {
+      let weatherData = await axios.get(url);
+   console.log(weatherData.data);
+
+      this.setState({
+        weatherData: weatherData.data,
+        error: false,
+      });
+    } catch (error) {
+      // if (this.state.error) {
+      //   return `${this.state.errorMessage}`;
+      // }
+      this.setState({
+        error: true,
+        errorMessage: error.message,
+      });
     }
-}
+  };
 
   getCityData = async (e) => {
     e.preventDefault();
-console.log(this.state.city);
     try {
-      let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`
+      let locationUrl = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
 
-      let cityData = await axios.get(url);
-      console.log('cityData',cityData.data);
+      let locationData = await axios.get(locationUrl);
+      this.getWeatherData(locationData.data[0]);
+      this.getMovies();
 
       this.setState({
-        cityData: cityData.data[0],
+        cityData: locationData.data[0],
         error: false,
-        lat: this.state.cityData.lat,
-        lon: this.state.cityData.lon,
+        lat: locationData.data[0].lat,
+        lon: locationData.data[0].lon,
       });
-
-    } catch(error){
-      if(this.state.error){
-       return `${this.state.errorMessage}`
-      }
+    } catch (error) {
+      // if (this.state.error) {
+      //   return `${this.state.errorMessage}`;
+      // }
       this.setState({
         error: true,
-        errorMessage: error.message
-      })
+        errorMessage: error.message,
+      });
     }
-  }
+  };
+
+  getMovies = async () => {
+    const url = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${this.state.citySearch}`;
+    const response = await axios.get(url);
+    console.log(response);
+    this.setState({ movies: response.data });
+  };
 
   render() {
+    console.log(this.state);
     return (
       <Container>
         <Form onSubmit={this.getCityData} id="city-form">
@@ -96,7 +100,7 @@ console.log(this.state.city);
             id="formInput"
             onChange={this.handleInput}
           />
-          <Button variant="primary" type="submit" >
+          <Button variant="primary" type="submit">
             Explore!
           </Button>
         </Form>
@@ -106,6 +110,12 @@ console.log(this.state.city);
             lat={this.state.cityData.lat}
             lon={this.state.cityData.lon}
           />
+        )}
+        {this.state.weatherData.length && (
+          <Weather weather={this.state.weatherData}/>
+        )}
+        {this.state.cityData.place_id && (
+          <Movies movies={this.state.movies}/>
         )}
         {this.state.error && <Error error={this.state.errorMessage} />}
       </Container>
