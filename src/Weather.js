@@ -2,7 +2,6 @@
 // let url = `{process.env.REACT_APP_SERVER}/weather?city=${this.StaticRange.species}`
 // let weather = await axios.get(url);
 
-import axios from "axios";
 import { Component } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import DaysForecast from "./DaysForecast";
