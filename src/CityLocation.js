@@ -4,8 +4,6 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 
 class CityLocation extends Component {
-  
-
   render() {
     let getMapImg =`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.props.lat},${this.props.lon}&zoom=12&size=480x480`
     return (
