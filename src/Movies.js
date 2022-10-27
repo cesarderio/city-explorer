@@ -8,10 +8,9 @@ class Movies extends React.Component {
     return (
       <Container fluid id="movieContainer">
         <Carousel loop={true} rows={1} cols={3} id="carousel">
-          {
-            this.props.movies.map((movie, idx) => (
-              <Carousel.Item className="movieCarousel">
-                <Card key={idx} className='movieCard'>
+          {this.props.movies.map((movie, index) => (
+              <Carousel.Item key={index}  className="movieCarousel">
+                <Card className='movieCard'>
                   <Card.Body>
                     <Card.Title className="movieTitle">
                       {" "}

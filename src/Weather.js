@@ -10,9 +10,9 @@ class Weather extends Component {
   render() {
     return (
           <Accordion defaultActiveKey="0">
-            {this.props.weather.map((day, idx) => (
+            {this.props.weather.map((day, index) => (
               <DaysForecast
-                key={this.key}
+                key={day.date}
                 date={day.date}
                 description={day.description}
               />
