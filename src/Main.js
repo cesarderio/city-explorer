@@ -9,7 +9,6 @@ import Error from "./Error";
 import CityLocation from "./CityLocation";
 import Weather from "./Weather";
 import Movies from "./Movies"
-
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -46,9 +45,6 @@ class Main extends Component {
         error: false,
       });
     } catch (error) {
-      // if (this.state.error) {
-      //   return `${this.state.errorMessage}`;
-      // }
       this.setState({
         error: true,
         errorMessage: error.message,
@@ -62,7 +58,7 @@ class Main extends Component {
       let locationUrl = `http://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
 
       let locationData = await axios.get(locationUrl);
-      // this.getWeatherData(locationData.data[0]);
+      this.getWeatherData(locationData.data[0]);
       this.getMovies();
 
       this.setState({
@@ -72,9 +68,6 @@ class Main extends Component {
         lon: locationData.data[0].lon,
       });
     } catch (error) {
-      // if (this.state.error) {
-      //   return `${this.state.errorMessage}`;
-      // }
       this.setState({
         error: true,
         errorMessage: error.message,
