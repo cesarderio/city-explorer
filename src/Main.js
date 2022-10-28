@@ -55,7 +55,7 @@ class Main extends Component {
   getCityData = async (e) => {
     e.preventDefault();
     try {
-      let locationUrl = `http://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
+      let locationUrl = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
 
       let locationData = await axios.get(locationUrl);
       this.getWeatherData(locationData.data[0]);
