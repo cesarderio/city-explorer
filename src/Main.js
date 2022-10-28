@@ -5,10 +5,10 @@ import axios from "axios";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Error from "./Error";
-import CityLocation from "./CityLocation";
-import Weather from "./Weather";
-import Movies from "./Movies"
+import Error from "./Components/Error";
+import CityLocation from "./Components/CityLocation";
+import Weather from "./Components/Weather";
+import Movies from "./Components/Movies"
 class Main extends Component {
   constructor(props) {
     super(props);
