@@ -3,8 +3,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css"
 import Main from './Main';
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 class App extends Component {
   render() {
